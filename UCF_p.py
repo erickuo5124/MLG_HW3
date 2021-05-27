@@ -1,13 +1,13 @@
-# User-based Collaborative Filtering with consine similarity
+# User-based Collaborative Filtering with pearson correlation similarity
 import numpy as np
 import pandas as pd
 from utils.evaluation import print_evalution
 from utils.CF import get_min_index, get_ratings
-from utils.similarity import cos_sim
+from utils.similarity import pearson_sim
 
 # parameter
 path = './datas/processed/movie/user_movie.pkl'
-predict_num = 100 # number of predict users
+predict_num = 5 # number of predict users
 test_size = 0.2
 k = 10 # k most similar users
 
@@ -18,7 +18,7 @@ def get_value_index(predict, datas):
     values = np.zeros(k)
     indexs = np.zeros(k).astype(int)
     for index, data in enumerate(datas):
-      sim = cos_sim(user, data)
+      sim = pearson_sim(user, data)
       min_index = get_min_index(values)
       if sim > values[min_index]:
         values[min_index] = sim

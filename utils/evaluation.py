@@ -26,7 +26,6 @@ def Recall(predict, answer):
         if p >= avg:
           hit += 1
     recall_sum += hit / rel
-
   # consider divided by zero
   return recall_sum / user_num if user_num else 1
     
