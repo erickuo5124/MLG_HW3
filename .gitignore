@@ -1,2 +1,5 @@
 *.dat
 *.pkl
+
+result
+__pycache__
