@@ -1,4 +1,4 @@
-# User-based Collaborative Filtering with consine similarity
+# Item-based Collaborative Filtering with consine similarity
 import numpy as np
 import pandas as pd
 from utils.evaluation import print_evalution
@@ -14,6 +14,7 @@ if __name__ == '__main__':
   df = pd.read_pickle(path)
 
   datas = df.to_numpy().astype('int')
+  datas = np.swapaxes(datas, 0, 1)
 
   user_num = datas.shape[0]
   rnd = np.random.randint(user_num, size=predict_num)
