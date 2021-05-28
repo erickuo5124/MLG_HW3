@@ -8,7 +8,6 @@ from utils.CF import get_ratings, get_value_index_pearson
 path = './datas/processed/movie/user_movie.pkl'
 predict_num = 10 # number of predict users
 test_size = 0.2
-k = 10 # k most similar users
 
 if __name__ == '__main__':
   df = pd.read_pickle(path)
